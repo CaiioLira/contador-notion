@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador Futurista</title>
+    <link rel="stylesheet" href="./src/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contador de Check-ins</h1>
+      <p>Pressione o botão abaixo para fazer um check-in:</p>
+      <button id="checkin-btn">Check-in</button>
+      <p id="count-display">Total de check-ins consecutivos: 0</p>
+      <p id="countdown-display"></p>
+      <!-- Elemento para a contagem regressiva -->
+      <button id="reset-btn">Zerar Contagem</button>
+    </div>
+
+    <div id="notification-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p id="modal-message">
+          Aguarde até que o tempo de 24h para o próximo Check-in seja atingido.
+        </p>
+      </div>
+    </div>
+
+    <script src="./src/js/scripts.js"></script>
+  </body>
+</html>

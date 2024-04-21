@@ -1,0 +1,161 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #d9d9d9;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: linear-gradient(145deg, #333, #111);
+    padding: 2em;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container:hover::before {
+    transform: rotate(45deg) translate(25%, 25%);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+button {
+    background-color: #333;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    margin: 0.5em;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+#countdown-display {
+    font-size: 1em;
+    color: #a9a9a9;
+}
+
+
+.modal {
+    display: none;
+  
+    position: fixed;
+ 
+    z-index: 1;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+/* Estilização do modal para combinar com o estilo do container */
+.modal-content { 
+    background: linear-gradient(145deg, #333, #111); /* Fundo gradiente semelhante ao do container */
+    color: #d9d9d9; /* Cor de texto semelhante ao container */
+    border-radius: 15px; /* Borda arredondada para combinar com o container */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Sombra para dar um efeito elevado */
+    border: none; /* Sem bordas */
+    padding: 2em; /* Espaçamento interno para consistência */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte consistente com o corpo */
+    animation-name: modalopen; /* Animação suave ao abrir */
+    animation-duration: 0.4s; /* Duração da animação */
+    /* Ajuste no posicionamento e largura para melhor responsividade e aparência */
+    margin: 10% auto;
+    width: 400px; /* Largura fixa de 400px */
+    height: 200px; /* Altura fixa de 200px */
+    display: flex; /* Habilita o uso de flexbox */
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    position: relative;
+}
+
+/* Botão de fechar (close-btn) com estilo coerente */
+.close-btn {
+    color: #d9d9d9; /* Cor de texto semelhante ao container */
+    text-shadow: none; /* Sem sombra de texto para uma aparência limpa */
+    position: absolute; /* Posicionamento absoluto dentro do modal-content */
+    top: 10px; /* Espaço do topo */
+    right: 10px; /* Espaço da direita */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
+/* Botão de fechar (close-btn) ao passar o mouse ou focar */
+.close-btn:hover,
+.close-btn:focus {
+    color: #ffffff; /* Cor mais clara para destaque */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animação para abrir o modal com estilo futurista */
+@keyframes modalopen {
+    0% {
+        transform: scale(0.9); /* Começa um pouco menor */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); /* Escala para o tamanho normal */
+        opacity: 1;
+    }
+}
+/* Estilo para o texto dentro do modal-content */
+.modal-content p {
+    margin: 0; /* Remove margens para um texto mais condensado */
+    padding: 0 1em; /* Adiciona padding horizontal para o texto não tocar as bordas */
+    text-align: center; /* Garante que o texto esteja centralizado */
+}
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%; /* Largura proporcial na tela para telas menores */
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+        padding: 1em; /* Padding para não ficar muito colado nas bordas da tela */
+    }
+}
+
+/* Aplica um estilo futurista minimalista ao botão dentro do modal-content */
+.modal-content button {
+    background-color: #333;
+    border: none;
+    padding: 1em 2em;
+    margin: 1em 0;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 10px;
+    margin-top: 1em; /* Espaço acima do botão */
+}
+
+/* Efeito de hover no botão dentro do modal-content para uma interação mais dinâmica */
+.modal-content button:hover {
+    background-color: #555;
+    transform: translateY(-2px); /* Levanta ligeiramente o botão */
+}
